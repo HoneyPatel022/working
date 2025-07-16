@@ -13,6 +13,19 @@ const imageMap = {
 
 
 
+
+
+function toggleDropdown() {
+  const menu = document.getElementById('dropdownContent');
+
+  if (menu.classList.contains('active')) {
+    // Add smooth close with delay
+    menu.classList.remove('active'); 
+  } else {
+    menu.classList.add('active'); 
+  }
+}
+
 function showImage(sector) {
   const display = document.getElementById('displayArea');
   display.innerHTML = `
@@ -20,15 +33,10 @@ function showImage(sector) {
       <img src="${imageMap[sector]}" alt="${sector} Image">
     </div>
   `;
-}
 
-
-
-function toggleDropdown() {
   const menu = document.getElementById('dropdownContent');
-  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  menu.classList.remove('active'); 
 }
-
 
 
 
